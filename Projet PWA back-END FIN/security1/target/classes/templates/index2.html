@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Tracker Home Page</title>
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <div>
+            <h1>Welcome to Food Tracker home page</h1>
+        </div>
+
+        <div class="p-2">
+            <a class="h2" th:href=@{/Profile}> Create/Modify Profil </a>
+        </div>
+
+        <div class="p-2">
+            <a class="h2" th:href=@{/AlimentsRub}>Create/Modify a daily List of aliments</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Security1Application<security1>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.security.security1.Security1Application",
+      "projectName": "security1",
+      "args": ""
+    }
+  ]
+}

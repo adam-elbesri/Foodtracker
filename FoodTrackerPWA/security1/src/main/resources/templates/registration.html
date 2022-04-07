@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- create navigation bar ( header) -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                    Login Module</a>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <!-- Create HTML registration form -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+                <!-- success message -->
+                <div th:if="${param.success}">
+                    <div class="alert alert-info">You've successfully registered
+                        to our awesome app!</div>
+                </div>
+
+                <h1>Registration</h1>
+
+                <form th:action="@{/registration}" method="post" th:object="${user}">
+                    <div class="form-group">
+                        <label class="control-label" for="firstName"> First Name </label>
+                        <input id="firstName" class="form-control" th:field="*{firstName}" required
+                            autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="lastName"> Last Name </label> <input id="lastName"
+                            class="form-control" th:field="*{lastName}" required autofocus="autofocus" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label" for="height"> Height </label> <input id="height" type="number"
+                            min=0 class="form-control" th:field="*{height}" required autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="weight"> Weight </label> <input id="weight" type="number"
+                            min=0 class="form-control" th:field="*{weight}" required autofocus="autofocus" />
+                    </div>
+
+                    <div>
+                        <p> <b>Gender</b> </p>
+                        <div>
+                            <label class="control-label" for="men">Men</label>
+                            <input type="radio" data-th-field="*{gender}" id="men" value="Men" name="gender"
+                                class="form-control" checked>
+
+                        </div>
+
+                        <div>
+                            <label class="control-label" for="women">Women</label>
+                            <input type="radio" data-th-field="*{gender}" id="women" value="Women" name="gender"
+                                class="form-control">
+
+                        </div>
+                        <hr>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="birthday">Age </label> <input id="birthday" type="number"
+                            min=0 class="form-control" th:field="*{birthday}" required autofocus="autofocus" />
+                    </div>
+                    <hr>
+
+
+                    <div>
+                        <p> <b>Level of activite</b> </p>
+                        <div>
+                            <label class="control-label" for="no">je ne pratique pas le sport</label>
+                            <input type="radio" data-th-field="*{level_of_sport}" id="no" value=0 name="level_of_sport"
+                                class="form-control" checked>
+
+                        </div>
+
+                        <div>
+                            <label class="control-label" for="yes">Je pratique le sport</label>
+                            <input type="radio" data-th-field="*{level_of_sport}" id="yes" value=1 name="level_of_sport"
+                                class="form-control">
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <hr>
+
+
+
+                    <div class="form-group">
+                        <label class="control-label" for="email"> Email </label> <input id="email" class="form-control"
+                            th:field="*{email}" required autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="password"> Password </label> <input id="password"
+                            class="form-control" type="password" th:field="*{password}" required
+                            autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Register</button>
+                        <span>Already registered? <a href="/" th:href="@{/login}">Login
+                                here</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
